@@ -1,0 +1,118 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  animation: fadeIn 2s ease-out;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn-glow {
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #ff512f, #dd2476);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-glow:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+#message {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  visibility: hidden; /* Initially hidden */
+}
+
+#message.visible {
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible; /* Reveal the element */
+}
+
+.animated-message {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  animation: bounceIn 1s ease;
+}
+
+.highlight {
+  color: #ffde59;
+  font-weight: bold;
+  text-shadow: 0 0 20px #ffde59, 0 0 30px #ffae00;
+}
+
+.heart {
+  animation: heartbeat 1.5s infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-20px);
+  }
+  60% {
+    transform: scale(1.2) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
